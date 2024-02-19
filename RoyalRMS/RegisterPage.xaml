@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoyalRMS.RegisterPage"
+             xmlns:local="clr-namespace:RoyalRMS"
+             BackgroundColor="#F5F5F5">
+
+    <ScrollView>
+        <StackLayout Padding="25">
+        <Label Text="Sign Up" FontSize="24" HorizontalOptions="Center" Margin="0,20,0,0" />
+
+        <Label Text="Name" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+        <Entry Placeholder="Name"/>
+        <Label Text="Mobile" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+        <Entry Placeholder="Mobile Number" />
+        <Label Text="Email" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+        <Entry Placeholder="Email"/>
+        <Label Text="Password" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+        <Entry Placeholder="Password" IsPassword="True" />
+
+        <StackLayout Orientation="Horizontal">
+            <Switch IsToggled="True" />
+                <Label Text="I agree to the Terms of Services and Privacy Policy." WidthRequest="290" Margin="0,20,0,20" LineBreakMode="WordWrap" >
+                    
+                </Label>
+        </StackLayout>
+
+        <Button Text="Continue" BackgroundColor="#FF0000" TextColor="White" Pressed="OnContinuePressed" />
+
+            <Label Text="Have an Account? Sign In" HorizontalOptions="Center" Margin="0,20,0,0" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignInTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+    </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

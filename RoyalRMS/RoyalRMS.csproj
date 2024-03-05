@@ -64,6 +64,9 @@
 
 
 	<ItemGroup>
+	  <MauiXaml Update="ForgotPasswordPage.xaml">
+  	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="OTPVerificationPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

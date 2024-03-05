@@ -13,14 +13,14 @@ namespace RoyalRMS
 
         }
 
-        private void OnForgotPasswordTapped(object sender, EventArgs e)
+        private async void OnForgotPasswordTapped(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ForgotPasswordPage());
         }
 
-        private void OnSignUpTapped(object sender, EventArgs e)
+        private async void OnSignUpTapped(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new RegisterPage());
         }
     }
 

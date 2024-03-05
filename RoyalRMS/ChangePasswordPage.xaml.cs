@@ -7,9 +7,8 @@ public partial class ChangePasswordPage : ContentPage
 		InitializeComponent();
 	}
 
-
     private async void OnPasswordChangeClicked(object sender, EventArgs e)
     {
-
+        await Navigation.PushAsync(new ManageEmployeePage());
     }
 }

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoyalRMS.Views.SignupView"
+             xmlns:vm="clr-namespace:RoyalRMS.ViewModels"
+             x:DataType="vm:SignupViewModel"
+             Shell.NavBarIsVisible="false"
+             Title="SignupView">
+    
+    <ScrollView>
+        <StackLayout Padding="25">
+            <Label Text="Sign Up" FontSize="24" HorizontalOptions="Center" Margin="0,40,0,0" />
+
+            <Label Text="Name" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+            <Entry Text ="{Binding Name}" Placeholder="Enter your name"/>
+            <Label Text="Mobile" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+            <Entry Text ="{Binding Phone}" Placeholder="Enter your mobile number" />
+            <Label Text="Email" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+            <Entry Text ="{Binding Email}" Placeholder="Enter your email"/>
+            <Label Text="Password" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+            <Entry Text ="{Binding Password}" Placeholder="Enter your password" IsPassword="True" />
+
+            <StackLayout Orientation="Horizontal">
+                <Switch IsToggled="{Binding IsChecked}" />
+                <Label Text="I agree to the Terms of Services and privacy policy." WidthRequest="290" Margin="0,20,0,20" LineBreakMode="WordWrap" >
+
+                </Label>
+            </StackLayout>
+
+            <Button Text="Continue" BackgroundColor="#FF0000" TextColor="White" Command="{Binding CreateAccountCommand}" Margin="40,5,40,10"/>
+
+            <Label Text="Login instead ?" HorizontalOptions="Center" Margin="0,20,0,0" TextColor="DarkSlateGray">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignInTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

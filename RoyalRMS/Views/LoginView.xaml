@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoyalRMS.Views.LoginView"
+             xmlns:vm="clr-namespace:RoyalRMS.ViewModels"
+             x:DataType="vm:LoginViewModel"
+             Shell.NavBarIsVisible="false"
+             Title="LoginView">
+    <ScrollView>
+
+        <StackLayout Padding="25">
+
+            <Image Source="crown1.jpg" HeightRequest="60" HorizontalOptions="Center" Margin="0,25,0,15"/>
+
+            <Label Text="Royal" FontSize="14" FontAttributes="Bold" TextColor="#666" HorizontalOptions="Center" />
+
+            <Label Text="Login" FontSize="24" FontAttributes="Bold" TextColor="#333" HorizontalOptions="Center" Margin="0,45,0,5"/>
+
+            <Label Text="Hi there! Nice to see you again." FontSize="16" TextColor="#666" HorizontalOptions="Center" Margin="0,15,0,10"/>
+
+            <Label Text="Email" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+            <Entry Text="{Binding Email}" Placeholder="Enter your email" Keyboard="Email" />
+
+            <Label Text="Password" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start" Margin="0,25,0,5"/>
+            <Entry Text="{Binding Password}" Placeholder="Enter your password" IsPassword="True"/>
+
+            <Button Text="Sign in" BackgroundColor="#FF5733" TextColor="White" CornerRadius="8" Command="{Binding LoginCommand}"  Margin="40,25,40,15" />
+
+            <Label Text="Forgot password ?" TextColor="#666" HorizontalOptions="Center" Margin="0,30,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label Text="Sign Up" TextColor="#FF5733" HorizontalOptions="Center"  Margin="0,20,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignUpTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

@@ -3,13 +3,94 @@
     x:Class="RoyalRMS.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:RoyalRMS"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:local="clr-namespace:RoyalRMS.Views"
     Title="RoyalRMS">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.FlyoutHeader>
+        <Grid>
+            <Image Source="crown1.jpg"
+                  HeightRequest="160"
+                  VerticalOptions="Center"
+                  WidthRequest="150"
+                  HorizontalOptions="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <ShellItem FlyoutItemIsVisible="False" >
+        <ShellContent
+            Title="Login"
+            ContentTemplate="{DataTemplate local:LoginView}"
+            Route="login" />
+    </ShellItem>
+
+    <ShellItem FlyoutItemIsVisible="False" >
+        <ShellContent
+            Title="Signup"
+            ContentTemplate="{DataTemplate local:SignupView}"
+            Route="signup" />
+    </ShellItem>
+    <ShellItem FlyoutItemIsVisible="False" >
+        <ShellContent
+            Title="ChangePass"
+            ContentTemplate="{DataTemplate local:ChangePasswordView}"
+            Route="changepass" />
+    </ShellItem>
+    <ShellItem FlyoutItemIsVisible="False" >
+        <ShellContent
+            Title="ForgotPass"
+            ContentTemplate="{DataTemplate local:ForgotPasswordView}"
+            Route="forgotpass" />
+    </ShellItem>
+    <ShellItem FlyoutItemIsVisible="False" >
+        <ShellContent
+            Title="OTPVerify"
+            ContentTemplate="{DataTemplate local:OTPVerificationView}"
+            Route="verifyotp" />
+    </ShellItem>
+    
+
+    <FlyoutItem Title="Home" Icon="home.png">
+        <ShellContent 
+            Title="Home"
+            ContentTemplate="{DataTemplate local:HomeView}" 
+            Route="home" />
+    </FlyoutItem>
+    <FlyoutItem Title="Reports" Icon="report.png">
+        <ShellContent 
+            Title="Reports"
+            ContentTemplate="{DataTemplate local:ReportView}" 
+            Route="report" />
+    </FlyoutItem>
+    <FlyoutItem Title="Customers" Icon="person.png">
+        <ShellContent 
+            Title="Customers"
+            ContentTemplate="{DataTemplate local:CustomerView}" 
+            Route="customer" />
+    </FlyoutItem>
+    <FlyoutItem Title="Employees" Icon="person.png">
+        <ShellContent 
+            Title="Employees"
+            ContentTemplate="{DataTemplate local:EmployeeView}" 
+            Route="employee" />
+    </FlyoutItem>
+    <FlyoutItem Title="Orders" Icon="cart.png">
+        <ShellContent 
+            Title="Orders"
+            ContentTemplate="{DataTemplate local:OrderView}" 
+            Route="order" />
+    </FlyoutItem>
+    <FlyoutItem Title="Products" Icon="product.png">
+        <ShellContent
+            Title="Products"
+            ContentTemplate="{DataTemplate local:ProductView}" 
+            Route="product" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Settings" Icon="settings.png">
+        <ShellContent 
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:SettingsView}" 
+            Route="settings"/>
+    </FlyoutItem>
 
 </Shell>

@@ -1,11 +1,16 @@
 ﻿
+using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace RoyalRMS.ViewModels
 {
-    public class OTPVerifyViewModel
+    public partial class OTPVerifyViewModel: BaseViewModel
     {
         public OTPVerifyViewModel()
         {
-           
+            Otp = ""; 
         }
+
+        [ObservableProperty]
+        string otp;
     }
 }

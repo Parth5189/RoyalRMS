@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace RoyalRMS.Models
 {
-    public class RestaurantModel : RealmObject
+    public class RestaurantModel: RealmObject
     {
         [PrimaryKey]
         [MapTo("_id")]
@@ -18,10 +18,14 @@ namespace RoyalRMS.Models
         [DefaultValue("")]
         public string Description { get; set; }
 
-        [MapTo("menu")]
-        public IList<string> Menu { get; } 
+        [MapTo("location")]
+        [DefaultValue("")]
+        public string Location { get; set; }
 
-        [MapTo("service_types")]
-        public IList<string> ServiceTypes { get; }
+        //[MapTo("menu")]
+        //public string[] Menu { get; set; } = [];
+
+        //[MapTo("service_types")]
+        //public string[] ServiceTypes { get; set; } = [];
     }
 }

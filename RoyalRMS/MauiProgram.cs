@@ -23,6 +23,12 @@ namespace RoyalRMS
             builder.Services.AddSingleton<ForgotPasswordViewModel>();
             builder.Services.AddSingleton<ChangePasswordViewModel>();
             builder.Services.AddTransient<OTPVerifyViewModel>();
+            builder.Services.AddTransient<HomeViewModel>();
+            builder.Services.AddTransient<CustomerViewModel>();
+            builder.Services.AddTransient<EmployeeViewModel>();
+            builder.Services.AddTransient<ProductViewModel>();
+            builder.Services.AddTransient<OrderViewModel>();
+            builder.Services.AddTransient<SettingsViewModel>();
 
             // Views
             builder.Services.AddSingleton<LoginView>();

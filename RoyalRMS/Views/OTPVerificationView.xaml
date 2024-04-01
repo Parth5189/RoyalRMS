@@ -2,11 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RoyalRMS.Views.OTPVerificationView"
+             xmlns:vm="clr-namespace:RoyalRMS.ViewModels"
+             x:DataType="vm:OTPVerifyViewModel"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
              Title="OTPVerificationView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout Padding="25">
+        <Image Source="crown1.jpg" HeightRequest="60" HorizontalOptions="Center" Margin="0,25,0,15"/>
+
+        <Label Text="OTP Verification" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center"  Margin="0,25,0,15"/>
+
+        <Label Text="{Binding Otp}" FontSize="14" FontAttributes="Bold" TextColor="#FF5733" HorizontalOptions="Start"  Margin="0,25,0,5"/>
+        <Entry Placeholder="Enter OTP" Keyboard="Numeric" />
+        <Button Text="Verify" BackgroundColor="Red" TextColor="White" Clicked="OnClickVerify" Margin="40,15,40,15" />
+        <Button Text="Cancel" Background="Transparent" TextColor="Gray" Clicked="OnClickCancel"/>
+    </StackLayout>
 </ContentPage>

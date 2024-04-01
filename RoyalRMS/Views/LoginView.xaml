@@ -5,7 +5,8 @@
              xmlns:vm="clr-namespace:RoyalRMS.ViewModels"
              x:DataType="vm:LoginViewModel"
              Shell.NavBarIsVisible="false"
-             Title="LoginView">
+             Shell.FlyoutBehavior="Disabled"
+             Title="Login">
     <ScrollView>
 
         <StackLayout Padding="25">

@@ -2,11 +2,71 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RoyalRMS.Views.EmployeeView"
+             xmlns:vm="clr-namespace:RoyalRMS.ViewModels"
+             xmlns:model="clr-namespace:RoyalRMS.Models"
+             x:DataType="vm:EmployeeViewModel"
              Title="Manage Employees">
-    <VerticalStackLayout>
-        <Label 
-            Text="Employee list"
+   
+      <ScrollView Margin="15">
+        <VerticalStackLayout>
+            <Label Text="Add an employee" Padding="5,5" Margin="25,8,25,0"/>
+
+            <Frame Padding="5,5" Margin="25,8,25,0" >
+                <Entry Text="{Binding Name}" Placeholder="Enter name" TextColor="#333"/>
+            </Frame>
+
+            <Frame Padding="5,5" Margin="25,8,25,0" >
+                <Entry Text="{Binding Email}" Placeholder="Enter email" TextColor="#333"/>
+            </Frame>
+
+            <Frame Padding="5,5" Margin="25,8,25,0" >
+                <Entry Text="{Binding Phone}" Placeholder="Enter contact number" TextColor="#333"/>
+            </Frame>
+
+            <Frame Padding="5,5" Margin="25,8,25,0" >
+                <Entry Text="{Binding Position}" Placeholder="Enter designation title" TextColor="#333"/>
+            </Frame>
+
+            <Frame Padding="5,5" Margin="25,8,25,0" >
+                <Entry Text="{Binding Salary}" Placeholder="Enter compensation amount" TextColor="#333"/>
+            </Frame>
+
+            <Button Text="Add"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+            HorizontalOptions="Center" 
+            WidthRequest="248"
+            Command="{Binding CreateDataCommand}"
+            Margin="0,20,0,0"
+            />  
+
+            <Label Text="Registered Employees" Padding="5,5" Margin="25,20,25,0" HorizontalOptions="Center"/>
+            <!-- employee List -->
+            <ListView ItemsSource="{Binding Employees}"
+              RowHeight="200"
+              BackgroundColor="AliceBlue"
+              SeparatorVisibility="Default">
+                <ListView.ItemTemplate >
+                    <DataTemplate x:DataType="model:EmployeeModel">
+                        <ViewCell >
+                            <StackLayout >
+                                <Label Text="{Binding Name, StringFormat='Name: {0:F0}'}"
+                                       Margin="10,10,10,0"
+                                       FontAttributes="Bold" />
+                                <Label Text="{Binding Position, StringFormat='Designation: {0:F0}'}"
+                                       Margin="10,10,10,0" />
+                                <Label Text="{Binding Email, StringFormat='Email: {0:F0}'}" 
+                                       Margin="10,10,10,0" />
+                                <Label Text="{Binding Phone, StringFormat='Contact: {0:F0}'}"
+                                       Margin="10,10,10,0" />
+                                <Label Text="{Binding Salary, StringFormat='Salary: {0:F0}'}"
+                                       Margin="10,10,10,0" />      
+                                <Label Text="{Binding IsPaid, StringFormat='Payment Done: {0:F0}'}"
+                                       Margin="10,10,10,0" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
 </ContentPage>

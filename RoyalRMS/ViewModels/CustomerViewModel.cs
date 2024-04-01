@@ -1,25 +1,29 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Realms.Sync;
+﻿using Realms.Sync;
 using Realms;
+using CommunityToolkit.Mvvm.ComponentModel;
 using RoyalRMS.Models;
 
 namespace RoyalRMS.ViewModels
 {
-    [QueryProperty(nameof(User), "UserData")]
-    public partial class HomeViewModel: BaseViewModel
+    public partial class CustomerViewModel: BaseViewModel
     {
         private Realm realm;
         private FlexibleSyncConfiguration config;
-        public HomeViewModel()
+
+        public CustomerViewModel()
         {
-           
+            User = new CustomerModel
+            {
+                Email = Preferences.Default.Get("email", "")
+            };
+            
         }
 
         [ObservableProperty]
         CustomerModel user;
 
         [ObservableProperty]
-        List<RestaurantModel> restaurants;
+        List<CustomerModel> appUsers;
 
         public async Task InitialiseRealm()
         {
@@ -34,19 +38,19 @@ namespace RoyalRMS.ViewModels
 
             realm.Subscriptions.Update(() =>
             {
-                var resData = realm.All<RestaurantModel>();
+                var resData = realm.All<CustomerModel>();
                 realm.Subscriptions.Add(resData);
             });
 
             await realm.Subscriptions.WaitForSynchronizationAsync();
 
         }
-        public async Task LoadRestaurants()
+        public async Task LoadCustomers()
         {
             try
             {
-               
-                Restaurants = realm.All<RestaurantModel>().AsEnumerable().ToList();
+
+                AppUsers = realm.All<CustomerModel>().AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
@@ -55,5 +59,4 @@ namespace RoyalRMS.ViewModels
             }
         }
     }
-
 }

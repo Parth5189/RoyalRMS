@@ -10,7 +10,7 @@
             <!-- products List -->
             <ListView ItemsSource="{Binding Products}"
               RowHeight="200"
-              BackgroundColor="AliceBlue"
+              BackgroundColor="Black"
               SeparatorVisibility="Default">
                 <ListView.ItemTemplate >
                     <DataTemplate x:DataType="model:ProductModel">

@@ -4,6 +4,8 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:RoyalRMS.Views"
+    FlyoutBackgroundColor="{AppThemeBinding Light=#f2f2f2, Dark=#2a2a2a}"
+    Shell.ForegroundColor="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"
     Title="RoyalRMS">
 
     <Shell.FlyoutHeader>
@@ -55,12 +57,6 @@
             ContentTemplate="{DataTemplate local:HomeView}" 
             Route="home" />
     </FlyoutItem>
-    <FlyoutItem Title="Reports" Icon="report.png">
-        <ShellContent 
-            Title="Reports"
-            ContentTemplate="{DataTemplate local:ReportView}" 
-            Route="report" />
-    </FlyoutItem>
     <FlyoutItem Title="Customers" Icon="person.png">
         <ShellContent 
             Title="Customers"
@@ -84,6 +80,12 @@
             Title="Products"
             ContentTemplate="{DataTemplate local:ProductView}" 
             Route="product" />
+    </FlyoutItem>
+    <FlyoutItem Title="Reports" Icon="report.png">
+        <ShellContent 
+            Title="Reports"
+            ContentTemplate="{DataTemplate local:ReportView}" 
+            Route="report" />
     </FlyoutItem>
 
     <FlyoutItem Title="Settings" Icon="settings.png">

@@ -22,6 +22,10 @@ namespace RoyalRMS.Models
         [Required]
         public string Phone { get; set; }
 
+        [MapTo("position")]
+        [Required]
+        public string Position { get; set; }
+
         [MapTo("salary")]
         [DefaultValue(0.0)]
         public double Salary { get; set; }

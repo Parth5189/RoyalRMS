@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Realms.Sync;
+using RoyalRMS.Models;
 
 namespace RoyalRMS.ViewModels
 {
@@ -29,7 +30,16 @@ namespace RoyalRMS.ViewModels
 
                 if (user != null)
                 {
-                    await Shell.Current.GoToAsync("///home");
+                    Preferences.Default.Set("email", Email);
+                    await Shell.Current.GoToAsync("///home",
+                        new Dictionary<string, object>()
+                        {
+                            { "UserData", new CustomerModel{
+
+                                       Email = Email
+                            }
+                           }
+                        });
                     Email = "";
                     Password = "";
                 }

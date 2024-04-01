@@ -8,5 +8,6 @@
             Text="View statistics"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Label Text="No reports yet" VerticalOptions="Center"/>
     </VerticalStackLayout>
 </ContentPage>

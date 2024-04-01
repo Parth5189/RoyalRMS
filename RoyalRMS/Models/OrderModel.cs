@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace RoyalRMS.Models
 {
-    public class OrderModel : RealmObject
+    public class OrderModel: RealmObject
     {
         [PrimaryKey]
         [MapTo("_id")]
@@ -15,11 +15,17 @@ namespace RoyalRMS.Models
         [Required]
         public string OrderNumber { get; set; }
 
-        [MapTo("customer_name")]
-        public CustomerModel Customer { get; set; }
+        [MapTo("customer")]
+        [Required]
+        public string Customer { get; set; }
 
-        [MapTo("items")]
-        public IDictionary<string, int> Items { get; }  // productname: quantity
+        [MapTo("item")]
+        [Required]
+        public string Item { get; set; }
+
+        [MapTo("quantity")]
+        [DefaultValue(0)]
+        public int Quantity { get; set; }
 
         [MapTo("bill_amt")]
         [DefaultValue(0.0)]

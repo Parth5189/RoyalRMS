@@ -1,29 +1,33 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using Realms.Sync;
 using Realms;
+using Realms.Sync;
 using RoyalRMS.Models;
 
 namespace RoyalRMS.ViewModels
 {
-    [QueryProperty(nameof(User), "UserData")]
-    public partial class HomeViewModel: BaseViewModel
+    public partial class ProductViewModel : BaseViewModel
     {
         private Realm realm;
         private FlexibleSyncConfiguration config;
-        public HomeViewModel()
+
+        public ProductViewModel()
         {
-           
+            User = new CustomerModel
+            {
+                Email = Preferences.Default.Get("email", "")
+            };
+
         }
 
         [ObservableProperty]
         CustomerModel user;
 
         [ObservableProperty]
-        List<RestaurantModel> restaurants;
+        List<ProductModel> products;
 
         public async Task InitialiseRealm()
         {
-            var cUser = App.RealmApp.CurrentUser;
+            var cUser = App.RealmApp.CurrentUser;            
             if (cUser == null)
             {
                 await Application.Current.MainPage.DisplayAlert("Session expired", "User not logged in", "Close");
@@ -34,19 +38,18 @@ namespace RoyalRMS.ViewModels
 
             realm.Subscriptions.Update(() =>
             {
-                var resData = realm.All<RestaurantModel>();
+                var resData = realm.All<ProductModel>();
                 realm.Subscriptions.Add(resData);
             });
 
             await realm.Subscriptions.WaitForSynchronizationAsync();
 
         }
-        public async Task LoadRestaurants()
+        public async Task LoadProducts()
         {
             try
             {
-               
-                Restaurants = realm.All<RestaurantModel>().AsEnumerable().ToList();
+                Products = realm.All<ProductModel>().AsEnumerable().ToList();
             }
             catch (Exception ex)
             {
@@ -55,5 +58,4 @@ namespace RoyalRMS.ViewModels
             }
         }
     }
-
 }

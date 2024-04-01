@@ -1,11 +1,16 @@
 ﻿
+using CommunityToolkit.Mvvm.ComponentModel;
+
 namespace RoyalRMS.ViewModels
 {
-    public class ForgotPasswordViewModel : BaseViewModel
+    public partial class ForgotPasswordViewModel : BaseViewModel
     {
         public ForgotPasswordViewModel()
         {
-            
+            Email = "";
         }
+
+        [ObservableProperty]
+        string email;
     }
 }

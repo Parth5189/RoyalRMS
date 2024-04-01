@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RoyalRMS.Views.Menu"
+             Title="Menu">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to our Italian Restaurant in Canada!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            Text="Appetizers"
+            FontSize="Large"
+            FontAttributes="Bold" />
+        <Label 
+            Text="1. Brussels Sprouts - $14.00" />
+        <Label 
+            Text="2. Backed Brie - $16.00" />
+        <Label 
+            Text="3. Mussels - $19.99" />
+        <Label 
+            Text="4. Spinach & Artichoke Dip - $17.00" />
+        <Label 
+            Text="5. Fries - $11.50" />
+        <Label 
+            Text="6. Dip Trio - $24.00" />
+        <Label 
+            Text="7. Kettle chips - $11.00" />
+        <Label 
+             Text="8. Poutin - $13.75" />
+        <Label 
+             Text="9. Nachos - $18.00" />
+        <Label 
+            Text="10. Antipasto Plate - $29.99" />
+        <Label 
+              Text="11. Cool Beans - $16.00" />
+        <Label 
+              Text="12. Scotch Egg - $9.00" />
+        <Label 
+               Text="13. Garlic Bread - $15.98" />
+
+        <Label 
+               Text="14. Potato Tots - $10.98" />
+        <Label 
+                Text="15. Onion Rings - $06.98" />
+
+         <Label 
+            Text="Salads"
+            FontSize="Large"
+            FontAttributes="Bold" />
+        <Label 
+            Text="1. Caesar Salad - $18.00" />
+        <Label 
+            Text="2. Garden Salad - $16.00" />
+        <Label 
+            Text="3. Greek Salad - $20.00" />
+        <Label 
+            Text="4. Crispy Chicken Cobb Salad - $22.99" />
+        <Label 
+            Text="5. Corn Salad - $18.99" />
+
+
+        <Label     Text="Pasta"
+                   FontSize="Large"
+                   FontAttributes="Bold" />
+        <Label 
+    Text="1. Chicken Parmesan - $25.00" />
+        <Label 
+    Text="2. Rigatoni - $26.00" />
+        <Label 
+    Text="3. Spaghetti - $27.00" />
+        <Label 
+    Text="4. Lasagna - $25.50" />
+        <Label 
+    Text="5. gnocchi - $27.00" />
+
+
+        <Label     Text="Pizza"
+               FontSize="Large"
+               FontAttributes="Bold" />
+        <Label 
+Text="1. Pepproni Lover's - $25.00" />
+        <Label 
+Text="2. Veggie Lover's - $22.00" />
+        <Label 
+Text="3. BBQ Chicken - $24.00" />
+        <Label 
+Text="4. Canadian  - $23.50" />
+        <Label 
+Text="5. Hawaiian - $27.00" />
+        <Label 
+Text="6. Margherita - $27.00" />
+        <Label 
+Text="7. The Great Beyond - $25.99" />
+        <Label 
+Text="8. Classic - $27.50" />
+
+
+        <Label     Text="Non - Alcoholic Beverage"
+               FontSize="Large"
+               FontAttributes="Bold" />
+        <Label 
+Text="1. Sparkling Water (330 ml) - $3.75" />
+        <Label 
+Text="2. Red Bull (250 ml) - $5.50" />
+        <Label 
+Text="3. Latte - $5.75" />
+        <Label 
+Text="4. House Brew Coffee  - $4.50" />
+        <Label 
+Text="5. Pepsi (355 ml) - $3.50" />
+        <Label 
+Text="6. Crush Orange (355 ml) - $3.50" />
+        <Label 
+Text="7. Coke (355 ml) - $3.50" />
+        
+        <Label 
+            Text="Desserts"
+            FontSize="Large"
+            FontAttributes="Bold" />
+        <Label 
+            Text="1. Tiramisu - $7.00" />
+        <Label 
+            Text="2. Gelato - $6.00" />
+        <Label 
+            Text="3. Cannoli - $5.00" />
+    </VerticalStackLayout>
+</ContentPage>

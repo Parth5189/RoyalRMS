@@ -11,7 +11,7 @@
         <!-- Restaurants List -->
         <ListView ItemsSource="{Binding Restaurants}"
                       RowHeight="120"
-                      BackgroundColor="AliceBlue"
+                      BackgroundColor="Black"
                       SeparatorVisibility="Default">
             <ListView.ItemTemplate >
                 <DataTemplate x:DataType="model:RestaurantModel">

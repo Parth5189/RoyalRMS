@@ -43,7 +43,7 @@
             <!-- employee List -->
             <ListView ItemsSource="{Binding Employees}"
               RowHeight="200"
-              BackgroundColor="Black"
+              BackgroundColor="AliceBlue"
               SeparatorVisibility="Default">
                 <ListView.ItemTemplate >
                     <DataTemplate x:DataType="model:EmployeeModel">

@@ -11,7 +11,7 @@
         <!-- users List -->
             <ListView ItemsSource="{Binding AppUsers}"
                   RowHeight="120"
-                  BackgroundColor="Black"
+                  BackgroundColor="AliceBlue"
                   SeparatorVisibility="Default">
                 <ListView.ItemTemplate >
                     <DataTemplate x:DataType="model:CustomerModel">

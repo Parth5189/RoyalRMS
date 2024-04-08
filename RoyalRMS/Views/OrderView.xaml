@@ -9,7 +9,7 @@
     <ScrollView Margin="15">
         <ListView ItemsSource="{Binding Orders}"
                   RowHeight="200"
-                  BackgroundColor="Black"
+                  BackgroundColor="AliceBlue"
                   SeparatorVisibility="Default">
             <ListView.ItemTemplate >
                 <DataTemplate x:DataType="model:OrderModel">

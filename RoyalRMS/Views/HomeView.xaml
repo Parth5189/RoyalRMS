@@ -10,18 +10,18 @@
 
         <!-- Restaurants List -->
         <ListView ItemsSource="{Binding Restaurants}"
-                      RowHeight="120"
-                      BackgroundColor="Black"
+                      RowHeight="310"
+                      BackgroundColor="AliceBlue"
                       SeparatorVisibility="Default">
             <ListView.ItemTemplate >
                 <DataTemplate x:DataType="model:RestaurantModel">
                     <ViewCell >
                         <StackLayout >
-                            <!--<Image Source="dotnet_bot.png"
+                            <Image Source="res1.jpg"
                                        Aspect="AspectFill"
-                                       Margin="0,0,30,0"
-                                       HeightRequest="80"
-                                       WidthRequest="60" />-->
+                                       Margin="0,5,0,0"
+                                       HeightRequest="180"
+                                       WidthRequest="360" />
                             <Label Text="{Binding Name}"
                                        Margin="10,10,10,0"
                                        FontAttributes="Bold" />
